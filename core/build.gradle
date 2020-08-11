@@ -12,15 +12,19 @@ dependencies {
 
 def pomInfo = new XmlSlurper().parse(file('info.pom'));
 
+java {
+     withSourcesJar()
+}
+
 publishing {
     publications {
-        maven(MavenPublication) {
+        library(MavenPublication) {
             from components.java
-            pom {
-                name = "$pomInfo.name"
-                description = "$pomInfo.description"
-                url = "$pomInfo.url"
-            }
+        }
+    }
+    repositories {
+        maven {
+            url = maven_path_topobyte
         }
     }
 }
