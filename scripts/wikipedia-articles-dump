@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DIR=$(dirname $0)
+CMD="$DIR/wikiclean.sh"
+CLASS="org.wikiclean.WikipediaArticlesDump"
+
+exec "$CMD" "$CLASS" "$@"
