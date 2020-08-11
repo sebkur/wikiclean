@@ -71,8 +71,7 @@ String content = cleaner.clean(raw);
 Sample command-line invocation to read a Wikipedia dump and output plain text:
 
 ```
-mvn exec:java -Dexec.mainClass=org.wikiclean.WikipediaArticlesDump \
-  -Dexec.args="-input enwiki-20161220-pages-articles.xml.bz2" | less
+./scripts/wikipedia-articles-dump -input enwiki-20161220-pages-articles.xml.bz2 | less
 ```
 
 Maven Artifacts
