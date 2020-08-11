@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <name>wikiclean-cli</name>
+  <description>A Java Wikipedia markup to plain text converter core.</description>
+  <url>https://github.com/sebkur/wikiclean</url>
+</project>
