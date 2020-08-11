@@ -1,5 +1,11 @@
 dependencies {
-    compile project(':wikiclean-core')
+    api project(':wikiclean-core')
+
+    api 'org.apache.ant:ant:1.10.1'
+    api 'edu.stanford.nlp:stanford-corenlp:3.7.0'
+    api 'args4j:args4j:2.33'
+
+    testImplementation 'junit:junit:4.12'
 }
 
 task copyJars(type: Copy) {

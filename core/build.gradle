@@ -4,6 +4,10 @@ if (project.hasProperty("topobyte")) {
 }
 
 dependencies {
+    api 'org.apache.commons:commons-lang3:3.5'
+
+    testImplementation 'commons-io:commons-io:2.5'
+    testImplementation 'junit:junit:4.12'
 }
 
 def pomInfo = new XmlSlurper().parse(file('info.pom'));
