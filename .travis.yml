@@ -3,4 +3,4 @@ dist: trusty
 jdk:
   - oraclejdk11
 install: true
-script: mvn test -B
+script: ./gradlew build
