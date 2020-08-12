@@ -21,10 +21,9 @@ import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
-import org.wikiclean.languages.Chinese;
 import org.wikiclean.languages.English;
-import org.wikiclean.languages.German;
 import org.wikiclean.languages.Language;
+import org.wikiclean.languages.Languages;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -35,6 +34,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -169,10 +169,9 @@ public class WikipediaArticlesDump implements Iterable<String> {
     }
 
     Language lang = new English();
-    if (args.lang.equalsIgnoreCase("de")) {
-      lang = new German();
-    } else  if (args.lang.equalsIgnoreCase("zh")) {
-      lang = new Chinese();
+    Optional<Language> langArg = Languages.language(args.lang.toLowerCase());
+    if (langArg.isPresent()) {
+      lang = langArg.get();
     }
 
     PrintStream out = new PrintStream(System.out, true, "UTF-8");
