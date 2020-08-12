@@ -18,7 +18,6 @@ package org.wikiclean;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
-import org.wikiclean.WikiClean.WikiLanguage;
 import org.wikiclean.languages.Chinese;
 
 import java.io.File;

@@ -20,7 +20,6 @@ import junit.framework.JUnit4TestAdapter;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.wikiclean.languages.Breton;
-import org.wikiclean.languages.French;
 
 import java.io.File;
 
