@@ -17,6 +17,7 @@
 package org.wikiclean;
 
 import org.junit.Test;
+import org.wikiclean.languages.English;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class WikipediaArticlesDumpTest {
     WikipediaArticlesDump wikipedia =
         new WikipediaArticlesDump(new File("src/test/resources/article-stubs.xml.bz2"));
 
-    WikiClean cleaner = new WikiClean.Builder().withLanguage(WikiClean.WikiLanguage.EN)
+    WikiClean cleaner = new WikiClean.Builder().withLanguage(new English())
         .withTitle(false).withFooter(false).build();
 
     String article;
