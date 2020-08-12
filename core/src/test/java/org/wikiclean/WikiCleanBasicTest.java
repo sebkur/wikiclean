@@ -36,7 +36,7 @@ public class WikiCleanBasicTest {
     try {
       String s = "Mutualism has been retrospectively characterised as ideologically situated between individualist and collectivist forms of anarchism.&lt;ref&gt;Avrich, Paul. ''Anarchist Voices: An Oral History of Anarchism in America'', Princeton University Press 1996 ISBN 0-691-04494-5, p.6&lt;br /&gt;''Blackwell Encyclopaedia of Political Thought'', Blackwell Publishing 1991 ISBN 0-631-17944-5, p. 11.&lt;/ref&gt; Proudhon first characterised his goal as a &quot;third form of society, the synthesis of communism and property.&quot;&lt;ref&gt;Pierre-Joseph Proudhon. ''What Is Property?'' Princeton, MA: Benjamin R. Tucker, 1876. p. 281.&lt;/ref&gt;";
 
-      Class[] classArgs = new Class[1];
+      Class<?>[] classArgs = new Class[1];
       classArgs[0] = String.class;
       Method method = WikiClean.class.getDeclaredMethod("removeRefs", classArgs);
       method.setAccessible(true);
@@ -53,7 +53,7 @@ public class WikiCleanBasicTest {
       // https://stackoverflow.com/questions/15015675/accessing-non-visible-classes-with-reflection
       Class<?> innerClazz = Class.forName("org.wikiclean.WikiClean$ImageCaptionsRemover");
 
-      Class[] classArgs = new Class[1];
+      Class<?>[] classArgs = new Class[1];
       classArgs[0] = String.class;
       Method method = innerClazz.getDeclaredMethod("remove", classArgs);
       method.setAccessible(true);
@@ -90,7 +90,7 @@ public class WikiCleanBasicTest {
       // https://stackoverflow.com/questions/15015675/accessing-non-visible-classes-with-reflection
       Class<?> innerClazz = Class.forName("org.wikiclean.WikiClean$DoubleBracesRemover");
 
-      Class[] classArgs = new Class[1];
+      Class<?>[] classArgs = new Class[1];
       classArgs[0] = String.class;
       Method method = innerClazz.getDeclaredMethod("remove", classArgs);
       method.setAccessible(true);
@@ -127,7 +127,7 @@ public class WikiCleanBasicTest {
       // https://stackoverflow.com/questions/15015675/accessing-non-visible-classes-with-reflection
       Class<?> innerClazz = Class.forName("org.wikiclean.WikiClean$TableRemover");
 
-      Class[] classArgs = new Class[1];
+      Class<?>[] classArgs = new Class[1];
       classArgs[0] = String.class;
       Method method = innerClazz.getDeclaredMethod("remove", classArgs);
       method.setAccessible(true);
