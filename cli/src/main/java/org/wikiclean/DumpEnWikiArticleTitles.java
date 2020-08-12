@@ -20,7 +20,7 @@ import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
-import org.wikiclean.WikiClean.WikiLanguage;
+import org.wikiclean.languages.English;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -54,7 +54,7 @@ public class DumpEnWikiArticleTitles {
       System.exit(-1);
     }
 
-    final WikiClean cleaner = new WikiClean.Builder().withLanguage(WikiLanguage.EN)
+    final WikiClean cleaner = new WikiClean.Builder().withLanguage(new English())
         .withTitle(false).withFooter(false).build();
 
     PrintWriter writer = new PrintWriter(args.output, "UTF-8");

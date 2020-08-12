@@ -21,7 +21,10 @@ import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.ParserProperties;
-import org.wikiclean.WikiClean.WikiLanguage;
+import org.wikiclean.languages.Chinese;
+import org.wikiclean.languages.English;
+import org.wikiclean.languages.German;
+import org.wikiclean.languages.Language;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -165,11 +168,11 @@ public class WikipediaArticlesDump implements Iterable<String> {
       System.exit(-1);
     }
 
-    WikiLanguage lang = WikiLanguage.EN;
+    Language lang = new English();
     if (args.lang.equalsIgnoreCase("de")) {
-      lang = WikiLanguage.DE;
+      lang = new German();
     } else  if (args.lang.equalsIgnoreCase("zh")) {
-      lang = WikiLanguage.ZH;
+      lang = new Chinese();
     }
 
     PrintStream out = new PrintStream(System.out, true, "UTF-8");
